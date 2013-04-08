@@ -3,8 +3,8 @@ ini_set("soap.wsdl_cache_enabled", 0);
 require_once '../class/UTL/UTLHttp.php';
 require_once '../class/ENV/MDL/ENVMDLEstadistica.php';
 
-$host="http://secure.teenvio.com";
-$client = new SoapClient($host.'/v4/public/api/v4/wsdl.xml',array('classmap'=>array('ENVMDLEstadistica'=>'ENVMDLEstadistica')));
+$wsdl="https://secure.teenvio.com/v4/public/api/v4/wsdl.xml";
+$client = new SoapClient($wsdl,array('classmap'=>array('ENVMDLEstadistica'=>'ENVMDLEstadistica')));
 
 UTLHttp::sendCharsetUTF8();
 echo '<br/>Llamada a $client->__getFunctions();<br/>';
