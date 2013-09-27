@@ -20,7 +20,7 @@ class UTLHttp{
 	 * @param boolean $pagina_error
 	 */
 	public static function sendNotFound($pagina_error=true){
-		//header('HTTP/1.0 404 Not Found');
+		header('HTTP/1.0 404 Not Found');
 		if ($pagina_error){
 			echo file_get_contents('includes/errores/404.html',true);
 			flush();
@@ -55,7 +55,7 @@ class UTLHttp{
 	 * Content-Type: text/html; charset=UTF-8	 
 	 */
 	public static function sendCharsetUTF8(){
-		header('Content-Type: text/html; charset=UTF-8');
+		if (!headers_sent()) header('Content-Type: text/html; charset=UTF-8');
 	}
 	
 	/**
@@ -75,12 +75,39 @@ class UTLHttp{
 	}
 	
 	/**
+	 * Envía cabecera de prohibido (HTTP 403) y muere
+	 * Si se pasa text, manda ese string antes de morir.
+	 * @param $txt
+	 */
+	public static function sendForbidden($txt=""){
+		header('HTTP/1.1 403 Forbidden');
+		die($txt);
+	}
+	
+	/**
+	 * Envía cabecera de error interno de servidor (HTTP 500) y muere
+	 * Si se pasa text, manda ese string antes de morir.
+	 * @param $txt
+	 */
+	public static function sendErrorInternoDeServidor($txt=""){
+		header('HTTP/1.1 500 Internal server error');
+		die($txt);
+	}
+	
+	/**
 	 * Devuelve true en el caso de que se detecte que el USER_AGENT contiene MSIE (Microsoft Internet Explorer)
 	 * @return boolean
 	 */
 	public static function isIE(){
 		if (!isset($_SERVER['HTTP_USER_AGENT'])) return false;
 		return (strpos($_SERVER['HTTP_USER_AGENT'],'MSIE')!==false);
+	}
+	
+	/**
+	 * Inicia una sesión a menos que fuese iniciada con anterioridad
+	 */
+	public static function sessionStart(){
+		if (session_id()=="") session_start();
 	}
 
 
