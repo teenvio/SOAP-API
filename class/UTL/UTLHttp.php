@@ -110,7 +110,17 @@ class UTLHttp{
 		if (session_id()=="") session_start();
 	}
 
-
+	/**
+	 * Devuelve el user agent del navegador o cadena en blanco en caso de no llegar
+	 * @return string
+	 */
+	public static function getUserAgent(){
+		if (isset($_SERVER['HTTP_USER_AGENT'])){
+			return $_SERVER['HTTP_USER_AGENT'];
+		}else{
+			return "";
+		}
+	}
 }
 
 ?>
