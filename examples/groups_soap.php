@@ -35,7 +35,7 @@ $client = new SoapClient($wsdl,array('classmap'=>array(
 
 UTLHttp::sendCharsetUTF8();
 
-if ($client->loggin('usuario','ipdea','******')==false){
+if ($client->loggin('usuario','plan','******')==false){
 	echo "<h1>incorrect user or pass / usuario o contraseña incorrectas</h1>";
 	die;
 }
