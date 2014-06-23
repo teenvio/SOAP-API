@@ -1,5 +1,5 @@
 
-Change te loggin data for the first use
+Change the login data before the first use
 
 --------------------------------------------
 
