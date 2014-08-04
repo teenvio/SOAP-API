@@ -1,29 +1,32 @@
 Teenvio Public API SOAP
 ===========================
 
-requirements:
+Requirements:
 --------------------------
 
 PHP >= 5.3.
 Soap Client enabled.
 
 
-install:
+Install:
 --------------------------
 
 Copy the folder "class" in your proyect.
 Copiar la carpeta "class" en el proyecto.
 
 
-examples:
+Examples:
 --------------------------
 See the examples folder.
 Mirar la carpeta "examples".
 
-wsdl:
+
+Wsdl:
+--------------------------
 https://secure.teenvio.com/v4/public/api/soap/wsdl.xml
 
-mehtods:
+
+Mehtods:
 --------------------------
 
 - boolean checkLoggin().
@@ -35,3 +38,12 @@ mehtods:
 - CONTMDLGrupo getGroupData(int $id_grupo).
 - ArrayCONTMDLGrupo getGroups().
 - Array getGroupContacts(int $id_grupo).
+- ENVMDLEnvio getEnvio(int $id_envio).
+- ENVEstadisticaContacto getStatsContact(int $id_envio,int $id_conctacto)
+
+
+Support:
+--------------------------
+
+http://teenvio.com
+soporte@teenvio.com
