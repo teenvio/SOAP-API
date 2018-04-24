@@ -1,12 +1,16 @@
 Teenvio Public API SOAP
 ===========================
 
+Warning:
+--------------------------
+**Deprecated - Without maintenance**
+View the better api: API-POST
+
 Requirements:
 --------------------------
 
 #### PHP:
 - PHP >= 5.3.
-
 - Soap Client enabled.
 
 #### Python:
@@ -48,9 +52,7 @@ Mehtods:
 - ENVMDLEnvio getEnvio(int $id_envio).
 - ENVEstadisticaContacto getStatsContact(int $id_envio,int $id_conctacto)
 
-
-Support:
+Warning:
 --------------------------
-
-http://teenvio.com
-soporte@teenvio.com
+**Deprecated - Without maintenance**
+View the better api: API-POST
